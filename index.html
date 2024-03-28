@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Day 02</title>
+    <style>
+        #btn{
+            position: relative;
+            top: 250px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn" onclick="submit()">submit</button><br>
+    <script>
+        function label_create(tagname,attr1,attrval1,content){
+    let label_ele = document.createElement(tagname)
+    label_ele.setAttribute(attr1,attrval1)
+    label_ele.innerHTML = content
+    return label_ele;
+}
+
+function break_create(){
+    let break_ele = document.createElement("br")
+    return break_ele
+}
+
+function input_create(tagname,attr1,attrval1,idname){
+    let input_ele = document.createElement(tagname)
+    input_ele.setAttribute(attr1,attrval1)
+    input_ele.id = idname
+    return input_ele;
+}
+
+let fname_ele = label_create("label","for","fname","FirstName : ")
+let input_fname = input_create("input","type","text","fname")
+let fname_break = break_create()
+let fname1_break = break_create()
+
+let mname_ele = label_create("label","for","mname","MiddleName : ")
+let input_mname = input_create("input","type","text","mname")
+let mname_break = break_create()
+let mname1_break = break_create()
+
+let lsname_ele = label_create("label","for","lsname","LastName : ")
+let input_lsname = input_create("input","type","text","lsname")
+let lsname_break = break_create()
+let lsname1_break = break_create()
+
+let email_ele = label_create("label","for","email","Email : ")
+let input_email = input_create("input","type","email","email")
+let email_break = break_create()
+let email1_break = break_create()
+
+let psd_ele = label_create("label","for","psd","Password : ")
+let input_psd = input_create("input","type","password","psd")
+let psd_break = break_create()
+let psd1_break = break_create()
+
+let add_ele = label_create("label","for","textarea","Address : ")
+let input_add = input_create("input","type","textarea","Address")
+let add_break = break_create()
+let add1_break = break_create()
+
+document.body.append(fname_ele,input_fname,fname_break,fname1_break,mname_ele,input_mname,mname_break,mname1_break,lsname_ele,input_lsname,lsname_break,lsname1_break,email_ele,input_email,email_break,email1_break,psd_ele,input_psd,psd_break,psd1_break,add_ele,input_add,add_break)
+
+function submit(){
+    console.log(document.getElementById("fname").value);
+    console.log(document.getElementById("mname").value);
+    console.log(document.getElementById("lsname").value);
+    console.log(document.getElementById("email").value);
+    console.log(document.getElementById("psd").value);
+    console.log(document.getElementById("address").value);
+}
+
+    </script>
+</body>
+</html>
